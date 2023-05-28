@@ -3,9 +3,15 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 h1 {
+  display: block;
+  margin: 0 auto 20px;
   text-align: center;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 36px;
+
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgb(230, 247, 254);
 }
 
 h2 {
@@ -16,7 +22,7 @@ h2 {
 .container {
   max-width: 600px;
   margin: 60px auto;
-  background: #e6f6f8;
+  background: #f0fafb;
   padding: 30px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;

@@ -10,6 +10,17 @@ function updateTime() {
       "h:mm:ss[<small>] A [</small>]"
     );
   }
+  let singaporeElement = document.querySelector("#singapore");
+  if (singaporeElement) {
+    let singaporeDateElement = singaporeElement.querySelector(".date");
+    let singaporeTimeElement = singaporeElement.querySelector(".time");
+    let singaporeTime = moment().tz("Europe/singapore");
+
+    singaporeDateElement.innerHTML = singaporeTime.format("MMMM Do YYYY");
+    singaporeTimeElement.innerHTML = singaporeTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 
   let zurichElement = document.querySelector("#zurich");
   if (zurichElement) {
