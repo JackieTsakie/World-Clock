@@ -14,7 +14,7 @@ function updateTime() {
   if (singaporeElement) {
     let singaporeDateElement = singaporeElement.querySelector(".date");
     let singaporeTimeElement = singaporeElement.querySelector(".time");
-    let singaporeTime = moment().tz("Europe/singapore");
+    let singaporeTime = moment().tz("Asia/Singapore");
 
     singaporeDateElement.innerHTML = singaporeTime.format("MMMM Do YYYY");
     singaporeTimeElement.innerHTML = singaporeTime.format(
@@ -33,9 +33,18 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]" //+ :SSS for milliseconds
     );
   }
+  let newYorkElement = document.querySelector("#new-york");
+  if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElement.querySelector(".time");
+    let newYorkTime = moment().tz("America/New_York");
+
+    newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
+    newYorkTimeElement.innerHTML = newYorkTime.format(
+      "h:mm:ss [<small>]A[</small>]" //+ :SSS for milliseconds
+    );
+  }
 }
-updateTime();
-setInterval(updateTime, 1000); //1 if we had only minutes
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
@@ -58,6 +67,9 @@ function updateCity(event) {
           <a href="/">All cities</a>
         `;
 }
+
+updateTime();
+setInterval(updateTime, 1000); //1 if we had only minutes
 
 let selectCitiesElement = document.querySelector("#city");
 selectCitiesElement.addEventListener("change", updateCity);

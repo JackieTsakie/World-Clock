@@ -63,3 +63,6 @@ footer {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.7);
 }
+a {
+  text-decoration: none;
+}
